@@ -1,1 +1,20 @@
-<% form_for @review, url: property_reviews_path(@property) %>
+<%= form_for review do |f| %>
+    <% review.each do |r| %>
+        <%= r.errors.full_messages if r.errors.present? %>
+    <% end %>
+    
+    <div class="field">
+        <%= f.label :rating %><br />
+        <%= f.number_field :rating %>
+    </div>
+
+    <div class="field">
+        <%= f.label :description %><br />
+        <%= f.text_field :description %>
+    </div>
+
+    <div class="actions">
+    <%= f.submit "Submit Review" %>
+  </div>
+
+<% end %>
