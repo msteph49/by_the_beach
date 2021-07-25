@@ -1,0 +1,32 @@
+<%= form_for @property do |f| %>
+    <%= @property.errors.full_messages if @property.errors.present? %>
+
+  <div class="field">
+    <%= f.label :street_address_1 %><br />
+    <%= f.text_field :street_address_1, autofocus: true, autocomplete: "street_address_1" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :street_address_2 %><br />
+    <%= f.text_field :street_address_2, autofocus: true, autocomplete: "street_address_2" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, autofocus: true, autocomplete: "city" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state, autofocus: true, autocomplete: "state" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :zipcode %><br />
+    <%= f.text_field :zipcode, autofocus: true, autocomplete: "zipcode" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit Property" %>
+  </div>
+<% end %>

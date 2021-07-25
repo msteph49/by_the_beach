@@ -1,1 +1,8 @@
-<h2>Welcome <%= @user.name%>!</h2>
+<h2>Welcome to By the Beach</h2>
+<h3>Your next vacation is just a few clicks away!</h3>
+
+<h4>Featured Properties</h4>
+
+<% Property.all do |p|%>
+    <% p.street_address_1 %>
+<%end %>

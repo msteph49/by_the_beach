@@ -3,6 +3,6 @@ class UsersController < ApplicationController
     
     
     def index
-        @user = User.find_by(params[:id])
+        @user = current_user
     end
 end

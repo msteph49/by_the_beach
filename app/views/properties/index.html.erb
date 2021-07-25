@@ -1,0 +1,7 @@
+<% @properties.each do |p| %>
+    <%= p.street_address_1 %><br>
+    <%= link_to 'Edit Property', edit_property_path(p) %>
+    <%= link_to 'View Property', property_path(p)%>
+<% end %><br>
+
+<%= link_to 'New Property', new_property_path %>

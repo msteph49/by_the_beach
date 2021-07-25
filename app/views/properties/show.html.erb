@@ -1,0 +1,6 @@
+<%= @property.street_address_1 %><br>
+<%= @property.user %>
+
+<%= link_to 'New Property', new_property_path %>
+<%= link_to 'View Properties', properties_path%>
+<%= link_to 'Delete Property', property_path(@property), method: :delete %>
