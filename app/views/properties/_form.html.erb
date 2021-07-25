@@ -1,6 +1,10 @@
 <%= form_for @property do |f| %>
     <%= @property.errors.full_messages if @property.errors.present? %>
 
+  <% @property.images.each do |image| %>
+    <%= image_tag image %>
+  <% end %>
+
   <div class="field">
     <%= f.label :street_address_1 %><br />
     <%= f.text_field :street_address_1, autofocus: true, autocomplete: "street_address_1" %>
@@ -29,6 +33,11 @@
   <div class="field">
     <%= f.label :images %><br />
     <%= f.file_field :images, multiple: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :amenities %><br />
+    <%= f.select :amenity_ids, Amenity.all.collect{ |a| [a.title, a.id] }, {}, multiple: true %>
   </div>
 
   <div class="actions">

@@ -1,7 +1,18 @@
+<h1>Show</h1>
+
+<% @property.images.each do |image| %>
+    <%= image_tag image %>
+<% end %>
+
 <%= @property.street_address_1 %><br>
 <%= @property.user %><br>
 
-<%= render @property.reviews %><br>
+<% @property.amenities.each do |amenity| %>
+    <%= amenity.title %>
+<% end %>
+
+<%= render @property.reviews %>
+
 
 <%= link_to 'New Property', new_property_path %>
 <%= link_to 'View Properties', properties_path%>

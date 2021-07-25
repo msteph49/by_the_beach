@@ -4,8 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
         
-  has_many :properties
-  has_many :reviews
+  has_many :properties, dependent: :destroy 
+  has_many :reviews, dependent: :destroy 
+  has_many :property_reviews, through: :reviews, source: :property
 
   def to_s
     name

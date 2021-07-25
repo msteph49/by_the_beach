@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_25_175446) do
+ActiveRecord::Schema.define(version: 2021_07_25_182541) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,6 +40,12 @@ ActiveRecord::Schema.define(version: 2021_07_25_175446) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "amenities", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "properties", force: :cascade do |t|
     t.string "street_address_1"
     t.string "street_address_2"
@@ -51,6 +57,15 @@ ActiveRecord::Schema.define(version: 2021_07_25_175446) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_properties_on_user_id"
+  end
+
+  create_table "property_amenities", force: :cascade do |t|
+    t.integer "property_id", null: false
+    t.integer "amenity_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["amenity_id"], name: "index_property_amenities_on_amenity_id"
+    t.index ["property_id"], name: "index_property_amenities_on_property_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -81,6 +96,7 @@ ActiveRecord::Schema.define(version: 2021_07_25_175446) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "properties", "users"
+  add_foreign_key "property_amenities", "properties"
   add_foreign_key "reviews", "properties"
   add_foreign_key "reviews", "users"
 end
