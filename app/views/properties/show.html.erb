@@ -3,14 +3,14 @@
 <% @property.images.each do |image| %>
     <%= image_tag image %>
 <% end %>
-
+<p>
 <%= @property.street_address_1 %><br>
-<%= @property.user %><br>
+<%= @property.user.email %><br>
 
 <% @property.amenities.each do |amenity| %>
     <%= amenity.title %>
 <% end %>
-
+<br>
 <%= render @property.reviews %>
 
 
