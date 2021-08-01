@@ -9,7 +9,7 @@ class PropertiesController < ApplicationController
     end
 
     def show
-        @property = Property.find_by(params[:id])
+        @property = Property.find(params[:id])
     end
 
     def create
@@ -45,7 +45,7 @@ class PropertiesController < ApplicationController
 
     def property_params
         params.require(:property).permit(:street_address_1, :street_address_2,
-        :city, :state, :zipcode, images: [], amenity_ids: [])
+        :city, :state, :zipcode, :description, images: [], amenity_ids: [])
     end
 
 end

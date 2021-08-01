@@ -1,7 +1,9 @@
-<% @properties.each do |p| %>
+<% @properties.collect do |p| %>
+    <div>
     <% p.images.each do |image| %>
     <%= image_tag image %>
     <% end %>
+    </div>
     
     <%= p.street_address_1 %><br>
     <%= p.description %>
