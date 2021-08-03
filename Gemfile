@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection'
-gem 'thin'
+# gem 'thin'
 gem 'dotenv-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
