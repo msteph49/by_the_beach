@@ -11,11 +11,9 @@
 <h4>Owner Contact Info: </h4>
 <%= @property.user.email %><br>
 <h4>Amenities:</h4>
-<% @property.amenities.each do |amenity| %>
-    <%= amenity.title %>
-<% end %>
+<%= @property.amenities.map(&:title).join(", ") %>
 <br>
 <%= render @property.reviews %>
-
+<br>
 
 <%= render 'links', property: @property %>
