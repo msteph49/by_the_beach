@@ -4,10 +4,13 @@
     <%= image_tag image %>
 <% end %>
 <p>
+<h3>Address: </h3>
 <%= @property.street_address_1 %><br>
+<h4>Description:</h4>
 <%= @property.description %>
+<h4>Owner Contact Info: </h4>
 <%= @property.user.email %><br>
-
+<h4>Amenities:</h4>
 <% @property.amenities.each do |amenity| %>
     <%= amenity.title %>
 <% end %>
@@ -15,7 +18,4 @@
 <%= render @property.reviews %>
 
 
-<%= link_to 'New Property', new_property_path %>
-<%= link_to 'View Properties', properties_path%>
-<%= link_to 'Delete Property', property_path(@property), method: :delete %>
-<%= link_to 'View Reviews', property_reviews_path(@property)%>
+<%= render 'links', property: @property %>

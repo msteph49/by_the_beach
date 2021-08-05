@@ -4,11 +4,15 @@
     <%= image_tag image %>
     <% end %>
     </div>
-    
+    <h4>Address: </h4>
     <%= p.street_address_1 %><br>
-    <%= p.description %>
-    <%= link_to 'Edit Property', edit_property_path(p) %> |
-    <%= link_to 'View Property', property_path(p)%> |
+    <h4>Description: </h4>
+    <%= p.description %><p>
+    
+    
+    
+    <%= render 'links', property: p %>
+    <%# <%= link_to 'View Property', property_path(p)%>
 <% end %>
 
-<%= link_to 'New Property', new_property_path %>
+<%# <%= link_to 'New Property', new_property_path %>

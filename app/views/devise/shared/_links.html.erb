@@ -3,7 +3,7 @@
 <% end %>
 
 <%- if controller_name != 'sessions' %>
-  <%= link_to('Log in with Facebook!', '/auth/facebook', method: :post) %> 
+  <%# <%= link_to('Log innnn with Facebook!', '/auth/facebook', method: :post) %>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
@@ -24,6 +24,6 @@
 
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
+    <%# <%= link_to "Sign iiiiin with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post %><br />
   <% end %>
 <% end %>
